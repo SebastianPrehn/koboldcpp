@@ -16,17 +16,17 @@ nixpkgs.config.allowUnfree = true;    # Allow proprietary software
 nixpkgs.config.cudaSupport = true;    # Enable CUDA functionality
 ```
 
-- Set your GPU architecture:
+- Set your GPU architecture: 
 
 ```nix
-nixpkgs.config.cudaCapabilities = [ "sm_75" ];  # Example for RTX 2080
+nixpkgs.config.cudaCapabilities = [ "7.5" ];  # Example for RTX 2080 (sm_75)
 ```
 
 To find your GPU's architecture code:
 
 1. Visit the [NVIDIA Architecture Guide](https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/)
 2. Locate your GPU Architecture
-3. Use the corresponding `sm_XX` code in your configuration
+3. Use the corresponding `sm_XX` code in your configuration with `X.X` syntax. 
 
 ## Hardware Support
 
@@ -40,16 +40,16 @@ To find your GPU's architecture code:
 nixpkgs.config = {
   allowUnfree = true;
   cudaSupport = true;
-  cudaCapabilities = [ "sm_75" ];
+  cudaCapabilities = [ "7.5" ];
 };
 environment.systemPackages = [ pkgs.koboldcpp ];
 # If you're using home-manager to install KoboldCpp
 # home.packages = [ pkgs.koboldcpp ];
 
 # You can also just override koboldcpp to add your CUDA architecture:
-# environment.systemPackages = [ (koboldcpp.override { cudaArches = ["sm_75"]; }) ]
+# environment.systemPackages = [ (koboldcpp.override { cudaArches = ["7.5"]; }) ]
 # or
-# home.packages = [ (koboldcpp.override { cudaArches = ["sm_75"]; }) ];
+# home.packages = [ (koboldcpp.override { cudaArches = ["7.5"]; }) ];
 ```
 
 ## KoboldCpp - Home Manager
