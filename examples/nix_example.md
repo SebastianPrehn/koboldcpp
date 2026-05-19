@@ -47,9 +47,9 @@ environment.systemPackages = [ pkgs.koboldcpp ];
 # home.packages = [ pkgs.koboldcpp ];
 
 # You can also just override koboldcpp to add your CUDA architecture:
-# environment.systemPackages = [ (koboldcpp.override { cudaArches = ["7.5"]; }) ]
+# environment.systemPackages = [ (koboldcpp.override { cudaArches = ["sm_75"]; }) ]
 # or
-# home.packages = [ (koboldcpp.override { cudaArches = ["7.5"]; }) ];
+# home.packages = [ (koboldcpp.override { cudaArches = ["sm_75"]; }) ];
 ```
 
 ## KoboldCpp - Home Manager
